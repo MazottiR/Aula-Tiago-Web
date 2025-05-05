@@ -1,9 +1,6 @@
 Sistema de Biblioteca 📚
 
 Sistema de gerenciamento de biblioteca desenvolvido em PHP utilizando o padrão arquitetural MVC (Model-View-Controller). Ideal para bibliotecas escolares, universitárias ou pequenas bibliotecas públicas.
-<p align="center">
-  <img src="https://raw.githubusercontent.com/username/sistema-biblioteca/master/docs/images/screenshot.png" alt="Screenshot do Sistema" width="600">
-</p>
 
 ✨ Funcionalidades
 
