@@ -1,122 +1,110 @@
-Sistema de Biblioteca - PHP MVC
-Este projeto implementa um sistema de gerenciamento de biblioteca desenvolvido em PHP, seguindo o padrão de arquitetura MVC (Model-View-Controller). O sistema permite gerenciar alunos, autores, categorias, livros e empréstimos em uma biblioteca.
-Estrutura do Projeto
-/
-├── App/
-│   ├── Controller/
-│   │   ├── AlunoController.php
-│   │   ├── AutorController.php
-│   │   ├── CategoriaController.php
-│   │   ├── Controller.php (classe base)
-│   │   ├── EmprestimoController.php
-│   │   ├── InicialController.php
-│   │   ├── LivroController.php
-│   │   └── LoginController.php
-│   ├── DAO/
-│   │   ├── AlunoDAO.php
-│   │   ├── AutorDAO.php
-│   │   ├── CategoriaDAO.php
-│   │   ├── DAO.php (classe base)
-│   │   ├── EmprestimoDAO.php
-│   │   ├── LivroDAO.php
-│   │   └── LoginDAO.php
-│   ├── Model/
-│   │   ├── Aluno.php
-│   │   ├── Autor.php
-│   │   ├── Categoria.php
-│   │   ├── Emprestimo.php
-│   │   ├── Livro.php
-│   │   ├── Login.php
-│   │   └── Model.php (classe base)
-│   └── View/
-│       ├── Aluno/
-│       │   ├── form_aluno.php
-│       │   └── lista_aluno.php
-│       ├── Autor/
-│       │   ├── form_autor.php
-│       │   └── lista_autor.php
-│       ├── Categoria/
-│       │   ├── form_categoria.php
-│       │   └── lista_categoria.php
-│       ├── Emprestimo/
-│       │   ├── form_emprestimo.php
-│       │   └── lista_emprestimo.php
-│       ├── Inicial/
-│       │   └── home.php
-│       ├── Livro/
-│       │   ├── form_livro.php
-│       │   └── lista_livro.php
-│       └── Login/
-│           └── form_login.php
-├── autoload.php
-├── config.php
-├── index.php
-└── routes.php
-Funcionalidades
-O sistema oferece as seguintes funcionalidades:
+Sistema de Biblioteca 📚
 
-Autenticação: Login e logout de usuários
-Alunos: Cadastro, visualização, edição e exclusão de alunos
-Autores: Cadastro, visualização, edição e exclusão de autores
-Categorias: Cadastro, visualização, edição e exclusão de categorias de livros
-Livros: Cadastro, visualização, edição e exclusão de livros
-Empréstimos: Registro, visualização, edição e exclusão de empréstimos de livros
+Sistema de gerenciamento de biblioteca desenvolvido em PHP utilizando o padrão arquitetural MVC (Model-View-Controller). Ideal para bibliotecas escolares, universitárias ou pequenas bibliotecas públicas.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/username/sistema-biblioteca/master/docs/images/screenshot.png" alt="Screenshot do Sistema" width="600">
+</p>
 
-Requisitos
+✨ Funcionalidades
+
+🔐 Autenticação segura - Sistema de login/logout com opção "lembrar-me"
+👥 Gerenciamento de Alunos - Cadastro, visualização, edição e exclusão
+✍️ Controle de Autores - Cadastro completo com validação de CPF
+📑 Categorias de Livros - Organização do acervo por categorias
+📖 Gerenciamento de Livros - Cadastro detalhado incluindo ISBN e editora
+📅 Sistema de Empréstimos - Controle de empréstimos e devoluções
+🛡️ Controle de Acesso - Rotas protegidas por autenticação
+
+🛠️ Tecnologias
+
+PHP 8.0+ - Utilizando recursos modernos como tipos de retorno, promoted properties
+MySQL - Banco de dados relacional para armazenamento
+Pattern MVC - Arquitetura Model-View-Controller para separação de responsabilidades
+DAO Pattern - Data Access Object para acesso ao banco de dados
+Namespaces - Organização e prevenção de conflitos de nomes
+Composer - Autoload e gerenciamento de dependências
+PDO - Camada de abstração para acesso ao banco de dados
+
+📋 Pré-requisitos
 
 PHP 8.0 ou superior
 MySQL 5.7 ou superior
-Servidor web (Apache, Nginx, etc.)
+Servidor web (Apache, Nginx)
+Extensões PHP: PDO, PDO_MySQL
 
-Instalação
+🚀 Instalação
+1. Clone o repositório
+bashgit clone https://github.com/seu-usuario/sistema-biblioteca.git
+cd sistema-biblioteca
+2. Configure o banco de dados
+Edite o arquivo config.php com suas credenciais de banco de dados:
+php$_ENV['db']['host'] = "localhost:3307";
+$_ENV['db']['user'] = "seu_usuario";
+$_ENV['db']['pass'] = "sua_senha";
+$_ENV['db']['database'] = "biblioteca";
+3. Importe o banco de dados
+bashmysql -u seu_usuario -p biblioteca < docs/database/schema.sql
+4. Configure o servidor web
+Aponte o servidor web para o diretório do projeto ou use o servidor interno do PHP:
+bashphp -S localhost:8000
+5. Acesse o sistema
+Abra o navegador e acesse:
+http://localhost:8000
+Credenciais padrão:
 
-Clone o repositório para o diretório do seu servidor web:
-git clone https://github.com/seu-usuario/sistema-biblioteca.git
+Email: admin@biblioteca.com
+Senha: admin123
 
-Configure as credenciais do banco de dados no arquivo config.php:
-php$_ENV['db']['host'] = "localhost:3307"; // Ajuste conforme necessário
-$_ENV['db']['user'] = "root";           // Substitua pelo seu usuário
-$_ENV['db']['pass'] = "etecjau";        // Substitua pela sua senha
-$_ENV['db']['database'] = "biblioteca"; // Nome do banco de dados
+📁 Estrutura do Projeto
+/
+├── App/
+│   ├── Controller/     # Controladores da aplicação
+│   ├── DAO/            # Camada de acesso a dados
+│   ├── Model/          # Modelos de negócio
+│   └── View/           # Interfaces de usuário
+├── public/             # Arquivos públicos (CSS, JS, imagens)
+├── docs/               # Documentação e arquivos SQL
+├── autoload.php        # Carregamento automático de classes
+├── config.php          # Configurações da aplicação
+├── index.php           # Ponto de entrada da aplicação
+└── routes.php          # Definição de rotas
 
-Importe o esquema do banco de dados (arquivo SQL fornecido separadamente).
-Certifique-se de que o servidor web tenha permissões de leitura e escrita no diretório do projeto.
-Acesse a aplicação pelo navegador (por exemplo, http://localhost/sistema-biblioteca/).
+📊 Esquema do Banco de Dados
+Tabelas principais:
 
-Estrutura do Banco de Dados
-O sistema utiliza as seguintes tabelas:
+aluno: id, nome, ra, curso
+autor: id, nome, nascimento, cpf
+categoria: id, descricao
+livro: id, titulo, id_categoria, isbn, ano, editora
+emprestimo: id, id_usuario, id_aluno, id_livro, emprestimo, devolucao
+usuario: id, nome, email, senha
 
-aluno: Armazena informações dos alunos (id, nome, ra, curso)
-autor: Armazena informações dos autores (id, nome, nascimento, cpf)
-categoria: Armazena categorias de livros (id, descricao)
-livro: Armazena informações dos livros (id, titulo, id_categoria, isbn, ano, editora)
-livro_autor: Tabela de relacionamento entre livros e autores (id_livro, id_autor)
-emprestimo: Registra empréstimos (id, id_usuario, id_aluno, id_livro, emprestimo, devolucao)
-usuario: Armazena informações dos usuários do sistema (id, nome, email, senha)
+🧩 Padrões de Projeto
+O sistema implementa os seguintes padrões:
 
-Padrão MVC
-O projeto segue o padrão Model-View-Controller (MVC):
+MVC (Model-View-Controller): Separação clara de responsabilidades
 
-Model: Contém a lógica de negócio e validação de dados
-View: Interfaces de usuário (formulários e listagens)
-Controller: Gerencia as requisições do usuário e coordena Model e View
-DAO (Data Access Object): Camada de acesso a dados que isola o banco de dados
+Model: Lógica de negócio e validação
+View: Interfaces de usuário
+Controller: Gerenciamento de requisições
 
-Características de Implementação
 
-Proteção de rotas através de sessão
-Validação de dados nos modelos
-Tratamento de exceções
-Autoload de classes
-Uso de namespaces
-Tipos de retorno explícitos
-Propriedades com getters e setters tipados
+DAO (Data Access Object): Isola a lógica de acesso a dados
+Front Controller: Todas as requisições passam pelo index.php
+Active Record: Modelos com métodos para persistência
 
-Contribuição
-Para contribuir com este projeto:
+🤝 Como Contribuir
 
-Faça um fork do repositório
-Crie um branch para sua funcionalidade (git checkout -b feature/nova-funcionalidade)
-Commit suas alterações (git commit -m 'Adiciona nova funcionalidade')
-Push para o branch (git push origin feature/nova-funcionalidade)
+Faça um fork do projeto
+Crie uma branch para sua feature (git checkout -b feature/nova-funcionalidade)
+Faça commit das alterações (git commit -m 'Adiciona nova funcionalidade')
+Envie para o branch (git push origin feature/nova-funcionalidade)
 Abra um Pull Request
+
+📝 Convenções de Código
+
+Siga o padrão PSR-4 para autoload
+Classes em PascalCase
+Métodos e variáveis em camelCase
+Constantes em SNAKE_CASE maiúsculo
+Indentação com 4 espaços
