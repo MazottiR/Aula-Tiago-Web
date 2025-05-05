@@ -1,7 +1,7 @@
 <?php
-    namespace PHPappMVCi\Controller;
+    namespace Aula_Tiago_Web\Controller;
 
-    use PHPappMVCi\Model\Categoria;
+    use Aula_Tiago_Web\Model\Categoria;
     use Exception;
 
     final class CategoriaConrtoller extends Controller

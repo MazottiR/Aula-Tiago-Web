@@ -1,7 +1,7 @@
 <?php
-    namespace PHPappMVCi\Model;
+    namespace  Aula_Tiago_Web\Model;
 
-    use PHPappMVCi\DAO\AlunoDAO;
+    use Aula_Tiago_Web\DAO\AlunoDAO;
     use Exception;
 
     final class Aluno extends Model

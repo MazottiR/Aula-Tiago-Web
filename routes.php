@@ -5,7 +5,7 @@ use App\Controller\{
     InicialController,
     LoginController,
     AutorController,
-    CategoriaController
+    CategoriaController,
     LivroController,
     EmprestimoController
 };

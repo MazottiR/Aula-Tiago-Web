@@ -1,7 +1,7 @@
 <?php
-    namespace PHPappMVCi\Controller;
+    namespace Aula_Tiago_Web\Controller;
 
-    use PHPappMVCi\Model\{ Emprestimo, Aluno, Livro };
+    use Aula_Tiago_Web\Model\{ Emprestimo, Aluno, Livro };
     use Exception;
 
     final class EmprestimoConrtoller extends Controller

@@ -1,7 +1,7 @@
 <?php
-    namespace PHPappMVCi\DAO;
+    namespace Aula_Tiago_Web\DAO;
 
-    use PHPappMVCi\Model\Emprestimo;
+    use Aula_Tiago_Web\Model\Emprestimo;
 
     final class EmprestimoDAO extends DAO
     {

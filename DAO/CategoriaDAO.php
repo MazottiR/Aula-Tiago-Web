@@ -1,7 +1,7 @@
 <?php
-    namespace PHPappMVCi\DAO;
+    namespace Aula_Tiago_Web\DAO;
 
-    use PHPappMVCi\Model\Categoria;
+    use Aula_Tiago_Web\Model\Categoria;
 
     final class CategoriaDAO extends DAO
     {

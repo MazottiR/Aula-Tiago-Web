@@ -1,7 +1,7 @@
 <?php
-    namespace PHPappMVCi\Controller;
+    namespace Aula_Tiago_Web\Controller;
 
-    use PHPappMVCi\Model\Login;
+    use Aula_Tiago_Web\Model\Login;
 
     final class LoginController
     {
