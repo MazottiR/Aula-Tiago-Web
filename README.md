@@ -90,13 +90,6 @@ DAO (Data Access Object): Isola a lógica de acesso a dados
 Front Controller: Todas as requisições passam pelo index.php
 Active Record: Modelos com métodos para persistência
 
-🤝 Como Contribuir
-
-Faça um fork do projeto
-Crie uma branch para sua feature (git checkout -b feature/nova-funcionalidade)
-Faça commit das alterações (git commit -m 'Adiciona nova funcionalidade')
-Envie para o branch (git push origin feature/nova-funcionalidade)
-Abra um Pull Request
 
 📝 Convenções de Código
 
@@ -105,3 +98,10 @@ Classes em PascalCase
 Métodos e variáveis em camelCase
 Constantes em SNAKE_CASE maiúsculo
 Indentação com 4 espaços
+
+🛠️ Como ver funcionando:
+
+Abra a pasta App no VS Code e via terminal inicialize o servidor do PHP
+Se necessário, edite os dados de conexão com MySQL no PHP (host, porta, usuário e senha)
+php -S localhost:8000
+Acesse no seu navegador: http://localhost:8000
