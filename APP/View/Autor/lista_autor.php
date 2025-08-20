@@ -28,7 +28,7 @@
                 <?php foreach($model->rows as $autor): ?>
                 <tr>
                     <td><?= $autor->Id ?></td>
-                    <td><a href="/autor/cadastro?id=<?= $autor->Id ?>"><?= $autor->Nome ?>/a> </td>
+                    <td><a href="/autor/cadastro?id=<?= $autor->Id ?>"><?= $autor->Nome ?> </td>
                     <td><?= $autor->Nome ?></td>
                     <td><a href="/autor/delete?id=<?= $autor->Id ?>">Remover</a> </td>
                 </tr>

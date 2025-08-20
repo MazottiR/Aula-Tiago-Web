@@ -24,6 +24,7 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Título</th>
+                    <th scope="col">Editora</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,7 @@
                 <tr>
                     <td> <?= $livro->Id ?> </td>
                     <td> <a href="/livro/cadastro?id=<?= $livro->Id ?>"><?= $livro->Titulo ?></a> </td>
+                    <td> <a href="/livro/cadastro?id=<?= $livro->Id ?>"><?= $livro->Editora ?></a> </td>
                     <td> <a href="/livro/delete?id=<?= $livro->Id ?>">Remover</a> </td>
                 </tr>
                 <?php endforeach ?>

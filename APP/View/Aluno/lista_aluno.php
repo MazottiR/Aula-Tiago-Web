@@ -22,14 +22,16 @@
                     <th scope="col">Id</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Curso</th>
+                    <th scope="col">RA</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($model->rows as $aluno): ?>
                 <tr>
                     <td><?= $aluno->Id ?></td>
-                    <td><a href="/aluno/cadastro?id=<?= $aluno->Id ?>"><?= $aluno->Nome ?>/a> </td>
+                    <td><a href="/aluno/cadastro?id=<?= $aluno->Id ?>"><?= $aluno->Nome ?> </td>
                     <td><?= $aluno->Curso ?></td>
+                    <td><a href="/aluno/cadastro?id=<?= $aluno->Id ?>"><?= $aluno->RA ?> </td>
                     <td><a href="/aluno/delete?id=<?= $aluno->Id ?>">Remover</a> </td>
                 </tr>
                 <?php endforeach?>
