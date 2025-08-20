@@ -98,7 +98,7 @@ switch($url)
         EmprestimoController::index();
     break;
 
-    case '/emprestimo/cadastro':-
+    case '/emprestimo/cadastro':
         EmprestimoController::cadastro();
     break;
 

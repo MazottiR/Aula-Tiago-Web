@@ -9,7 +9,6 @@ final class LoginController
     public static function index() : void
     {
         $erro = "";
-
         $model = new Login();
 
         if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -17,29 +16,32 @@ final class LoginController
             $model->Email = $_POST['email'];
             $model->Senha = $_POST['senha'];
             
-            $model = $model->logar();
+            $usuarioLogado = $model->logar();
 
-            if($model !== null)
+            if($usuarioLogado !== null)
             {
-                $_SESSION['usuario_logado'] = $model;
+                $_SESSION['usuario_logado'] = $usuarioLogado;
 
                 if(isset($_POST['lembrar']))
                 {
                     setcookie(
                         name: "sistema_biblioteca_usuario",
-                        value : $model->Email,
+                        value : $usuarioLogado->Email,
                         expires_or_options: time()+60*60*24*30
                     );
                 }
 
                 header("Location: /");
-            } else 
+            } else {
                 $erro = "Email ou senha incorretos";      
+            }
         }
 
+        // Verificar se existe cookie para pré-preencher o email
         if(isset($_COOKIE['sistema_biblioteca_usuario']))
             $model->Email = $_COOKIE['sistema_biblioteca_usuario'];
 
+        // Passar as variáveis para a view
         include VIEWS . '/Login/form_login.php';
     }
 

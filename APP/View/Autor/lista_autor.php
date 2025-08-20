@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <?php include VIEWS . 'Includes/menu.php' ?>
+        <?php include VIEWS . '/Includes/menu.php' ?>
         
         <h1>Lista de Autores</h1>
 

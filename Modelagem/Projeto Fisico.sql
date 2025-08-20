@@ -64,4 +64,9 @@ FOREIGN KEY(Id_Livro) REFERENCES Livro (Id),
 FOREIGN KEY(Id_Aluno) REFERENCES Aluno (Id)
 );
 
-insert into Usuario (Nome, Email, Senha) Values ('Rafael', 'tatucaixa@gmail.com', 'atum123'); 
+-- Inserir usuário de teste com senha criptografada em SHA1
+insert into Usuario (Nome, Email, Senha) Values ('Rafael', 'tatucaixa@gmail.com', sha1('atum123'));
+
+select * from Usuario;
+
+delete Email from Usuario where Email = 'tatucaixa@gmail.com';
